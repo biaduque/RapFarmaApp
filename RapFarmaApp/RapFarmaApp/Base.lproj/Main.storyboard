@@ -6,6 +6,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +21,7 @@
                         <color key="backgroundColor" name="Background"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sugestões" id="16b-bo-Bmf">
-                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" style="plain" id="gd7-nd-5i5">
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" style="done" id="gd7-nd-5i5">
                             <connections>
                                 <segue destination="nzT-NK-tFj" kind="presentation" id="9m5-wY-2am"/>
                             </connections>
@@ -57,7 +58,7 @@
                         <color key="backgroundColor" name="Background"/>
                     </view>
                     <navigationItem key="navigationItem" title="Meus pedidos" id="Fy7-AS-Am3">
-                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" style="plain" id="wFu-EP-aNW">
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" style="done" id="wFu-EP-aNW">
                             <connections>
                                 <segue destination="nzT-NK-tFj" kind="presentation" id="CHK-zC-kMx"/>
                             </connections>
@@ -79,7 +80,7 @@
                         <color key="backgroundColor" name="Background"/>
                     </view>
                     <navigationItem key="navigationItem" title="Minha conta" id="tlT-zK-gha">
-                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" style="plain" id="WoP-jq-2YN">
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" style="done" id="WoP-jq-2YN">
                             <connections>
                                 <segue destination="nzT-NK-tFj" kind="presentation" id="4nP-hB-v2T"/>
                             </connections>
@@ -93,24 +94,177 @@
         <!--Carrinho-->
         <scene sceneID="G5G-IN-swE">
             <objects>
-                <viewController id="sBD-rV-yyE" sceneMemberID="viewController">
+                <viewController id="sBD-rV-yyE" customClass="CarrinhoViewController" customModule="RapFarmaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oJI-pM-tby">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wKB-Rh-29d">
+                                <rect key="frame" x="0.0" y="88" width="414" height="589"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="9JQ-V2-PrI"/>
+                                    <constraint firstAttribute="height" constant="589" id="Kww-LL-faf"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mHf-EA-BU9">
+                                    <size key="itemSize" width="336" height="159"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="carrinhoCell" id="KoN-Hi-Mi3" customClass="CarrinhoViewCell" customModule="RapFarmaApp" customModuleProvider="target">
+                                        <rect key="frame" x="39" y="0.0" width="336" height="159"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pUG-T4-t3h">
+                                            <rect key="frame" x="0.0" y="0.0" width="336" height="159"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Qm-mJ-7Oo">
+                                                    <rect key="frame" x="109" y="102" width="18" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="X0G-sl-kpe"/>
+                                                        <constraint firstAttribute="width" constant="18" id="tvC-7i-nKf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="close" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyB-oU-aug">
+                                                    <rect key="frame" x="286" y="8" width="42" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="EFT-RW-yGB"/>
+                                                        <constraint firstAttribute="height" constant="32" id="QnF-zw-Oyl"/>
+                                                    </constraints>
+                                                    <buttonConfiguration key="configuration" style="plain"/>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remédio" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RGI-bL-g1d">
+                                                    <rect key="frame" x="109" y="16" width="81" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="81" id="Sy4-SU-SKt"/>
+                                                        <constraint firstAttribute="height" constant="24" id="jwZ-5Z-huE"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$20,00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZb-tG-Y0q">
+                                                    <rect key="frame" x="109" y="48" width="58.5" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="NfK-gs-6ip"/>
+                                                        <constraint firstAttribute="width" constant="58.5" id="Xz5-lB-xcy"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$20,00" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahX-Fh-FLN">
+                                                    <rect key="frame" x="251" y="102" width="65" height="20.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20.5" id="AgE-8j-S9P"/>
+                                                        <constraint firstAttribute="width" constant="65" id="uKZ-9K-hpM"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zam-8T-Tyx">
+                                                    <rect key="frame" x="12" y="16" width="89" height="123"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="123" id="XsY-jB-Zc9"/>
+                                                        <constraint firstAttribute="width" constant="89" id="cQH-6n-b1E"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ahX-Fh-FLN" firstAttribute="leading" secondItem="5Qm-mJ-7Oo" secondAttribute="trailing" constant="124" id="2Lw-XC-Q9e"/>
+                                                <constraint firstAttribute="trailing" secondItem="VZb-tG-Y0q" secondAttribute="trailing" constant="168.5" id="4LK-db-jmz"/>
+                                                <constraint firstAttribute="trailing" secondItem="EyB-oU-aug" secondAttribute="trailing" constant="8" id="6TB-oi-t3J"/>
+                                                <constraint firstItem="RGI-bL-g1d" firstAttribute="leading" secondItem="zam-8T-Tyx" secondAttribute="trailing" constant="8" symbolic="YES" id="8yN-bm-aZK"/>
+                                                <constraint firstItem="5Qm-mJ-7Oo" firstAttribute="leading" secondItem="zam-8T-Tyx" secondAttribute="trailing" constant="8" symbolic="YES" id="Ct4-MH-YLQ"/>
+                                                <constraint firstItem="EyB-oU-aug" firstAttribute="leading" secondItem="RGI-bL-g1d" secondAttribute="trailing" constant="96" id="E9d-3J-ifw"/>
+                                                <constraint firstAttribute="bottom" secondItem="ahX-Fh-FLN" secondAttribute="bottom" constant="36.5" id="EQg-It-gt7"/>
+                                                <constraint firstAttribute="trailing" secondItem="ahX-Fh-FLN" secondAttribute="trailing" constant="20" symbolic="YES" id="EoV-g3-Frc"/>
+                                                <constraint firstItem="RGI-bL-g1d" firstAttribute="top" secondItem="pUG-T4-t3h" secondAttribute="top" constant="16" id="FD8-3Y-5DQ"/>
+                                                <constraint firstItem="zam-8T-Tyx" firstAttribute="leading" secondItem="pUG-T4-t3h" secondAttribute="leading" constant="12" id="MmX-cA-eBQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="zam-8T-Tyx" secondAttribute="bottom" constant="20" symbolic="YES" id="NTx-Q5-QJj"/>
+                                                <constraint firstItem="EyB-oU-aug" firstAttribute="top" secondItem="pUG-T4-t3h" secondAttribute="top" constant="8" id="QO8-gh-wtj"/>
+                                                <constraint firstItem="5Qm-mJ-7Oo" firstAttribute="top" secondItem="VZb-tG-Y0q" secondAttribute="bottom" constant="36" id="gP1-lW-7Ia"/>
+                                                <constraint firstAttribute="bottom" secondItem="5Qm-mJ-7Oo" secondAttribute="bottom" constant="36.5" id="hOi-P0-bIM"/>
+                                                <constraint firstItem="VZb-tG-Y0q" firstAttribute="top" secondItem="RGI-bL-g1d" secondAttribute="bottom" constant="8" symbolic="YES" id="mdF-fJ-gpN"/>
+                                                <constraint firstItem="VZb-tG-Y0q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zam-8T-Tyx" secondAttribute="trailing" constant="8" symbolic="YES" id="o0O-iJ-ib8"/>
+                                                <constraint firstItem="ahX-Fh-FLN" firstAttribute="top" secondItem="EyB-oU-aug" secondAttribute="bottom" constant="62" id="o3Z-v6-QDz"/>
+                                                <constraint firstItem="zam-8T-Tyx" firstAttribute="top" secondItem="pUG-T4-t3h" secondAttribute="top" constant="16" id="wOV-SW-wyQ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="closeButton" destination="EyB-oU-aug" id="tvk-Js-yjh"/>
+                                            <outlet property="countLabel" destination="5Qm-mJ-7Oo" id="7xg-7u-0ZZ"/>
+                                            <outlet property="priceUnityLabel" destination="VZb-tG-Y0q" id="hZE-16-pVE"/>
+                                            <outlet property="productImage" destination="zam-8T-Tyx" id="JdM-iv-Lr9"/>
+                                            <outlet property="productName" destination="RGI-bL-g1d" id="sae-DR-J47"/>
+                                            <outlet property="totalValuePrice" destination="ahX-Fh-FLN" id="8P2-6e-9BK"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RhL-87-7Zy">
+                                <rect key="frame" x="74" y="741" width="268" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="IFR-4U-ZBe"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="268" id="meP-sB-k0P"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Fazer pedido"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wal-kd-GPp">
+                                <rect key="frame" x="74" y="685" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$100,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fh9-M4-9GE">
+                                <rect key="frame" x="269" y="685" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="qgA-7o-BpY"/>
                         <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="qgA-7o-BpY" firstAttribute="trailing" secondItem="RhL-87-7Zy" secondAttribute="trailing" constant="72" id="05p-wF-ge3"/>
+                            <constraint firstItem="qgA-7o-BpY" firstAttribute="bottom" secondItem="RhL-87-7Zy" secondAttribute="bottom" constant="33" id="1Aa-c1-5Ny"/>
+                            <constraint firstItem="wal-kd-GPp" firstAttribute="leading" secondItem="qgA-7o-BpY" secondAttribute="leading" constant="74" id="DqJ-9i-xBS"/>
+                            <constraint firstItem="RhL-87-7Zy" firstAttribute="leading" secondItem="qgA-7o-BpY" secondAttribute="leading" constant="74" id="GnT-IV-Zjz"/>
+                            <constraint firstItem="RhL-87-7Zy" firstAttribute="top" secondItem="wKB-Rh-29d" secondAttribute="bottom" constant="64" id="MS5-22-bAE"/>
+                            <constraint firstItem="fh9-M4-9GE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wal-kd-GPp" secondAttribute="trailing" constant="8" symbolic="YES" id="NzS-rG-L6z"/>
+                            <constraint firstItem="RhL-87-7Zy" firstAttribute="top" secondItem="fh9-M4-9GE" secondAttribute="bottom" constant="35" id="O1i-PJ-RSe"/>
+                            <constraint firstItem="qgA-7o-BpY" firstAttribute="trailing" secondItem="fh9-M4-9GE" secondAttribute="trailing" constant="72" id="Ues-MP-cRH"/>
+                            <constraint firstItem="wKB-Rh-29d" firstAttribute="leading" secondItem="qgA-7o-BpY" secondAttribute="leading" id="Ygh-p0-78Z"/>
+                            <constraint firstItem="fh9-M4-9GE" firstAttribute="top" secondItem="wKB-Rh-29d" secondAttribute="bottom" constant="8" symbolic="YES" id="Yqh-TA-Pe0"/>
+                            <constraint firstItem="wal-kd-GPp" firstAttribute="top" secondItem="wKB-Rh-29d" secondAttribute="bottom" constant="8" symbolic="YES" id="bBT-EQ-afW"/>
+                            <constraint firstItem="wKB-Rh-29d" firstAttribute="top" secondItem="qgA-7o-BpY" secondAttribute="top" id="sqz-q5-mzv"/>
+                            <constraint firstItem="RhL-87-7Zy" firstAttribute="top" secondItem="wal-kd-GPp" secondAttribute="bottom" constant="35" id="we3-Lx-n3d"/>
+                            <constraint firstItem="wKB-Rh-29d" firstAttribute="trailing" secondItem="qgA-7o-BpY" secondAttribute="trailing" id="wmF-sF-hf8"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Carrinho" id="6VC-w5-duj">
-                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" style="plain" id="uUF-0C-tgh">
+                        <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" style="done" id="uUF-0C-tgh">
                             <connections>
                                 <segue destination="nzT-NK-tFj" kind="presentation" id="XLG-rk-x79"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="collectionCarrinho" destination="wKB-Rh-29d" id="Yzm-OJ-74y"/>
+                        <outlet property="orderButton" destination="RhL-87-7Zy" id="SlB-Vy-JDr"/>
+                        <outlet property="totalLabel" destination="fh9-M4-9GE" id="AGi-3z-mC9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kdy-6t-tUT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="410" y="386"/>
+            <point key="canvasLocation" x="408.69565217391306" y="385.71428571428572"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="PFg-u8-bNa">
@@ -211,7 +365,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4nP-hB-v2T"/>
+        <segue reference="XLG-rk-x79"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="Accent"/>
     <resources>
