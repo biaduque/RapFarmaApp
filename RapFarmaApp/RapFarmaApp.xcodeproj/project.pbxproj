@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		131E8DD827162D2A0084A230 /* ProdutoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131E8DD727162D2A0084A230 /* ProdutoData.swift */; };
 		134FA9892714C2390043F1EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FA9882714C2390043F1EA /* AppDelegate.swift */; };
 		134FA98B2714C2390043F1EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FA98A2714C2390043F1EA /* SceneDelegate.swift */; };
 		134FA98D2714C2390043F1EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FA98C2714C2390043F1EA /* ViewController.swift */; };
@@ -14,9 +15,12 @@
 		134FA9932714C2390043F1EA /* RapFarmaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 134FA9912714C2390043F1EA /* RapFarmaApp.xcdatamodeld */; };
 		134FA9952714C23A0043F1EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 134FA9942714C23A0043F1EA /* Assets.xcassets */; };
 		134FA9982714C23A0043F1EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 134FA9962714C23A0043F1EA /* LaunchScreen.storyboard */; };
+		1367257E271615FC00797A8E /* CarrinhoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1367257D271615FC00797A8E /* CarrinhoViewController.swift */; };
+		136725802716162F00797A8E /* CarrinhoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1367257F2716162F00797A8E /* CarrinhoViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		131E8DD727162D2A0084A230 /* ProdutoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoData.swift; sourceTree = "<group>"; };
 		134FA9852714C2390043F1EA /* RapFarmaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RapFarmaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		134FA9882714C2390043F1EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		134FA98A2714C2390043F1EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +30,8 @@
 		134FA9942714C23A0043F1EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		134FA9972714C23A0043F1EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		134FA9992714C23A0043F1EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1367257D271615FC00797A8E /* CarrinhoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CarrinhoViewController.swift; path = RapFarmaApp/ViewControllers/CarrinhoViewController.swift; sourceTree = SOURCE_ROOT; };
+		1367257F2716162F00797A8E /* CarrinhoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarrinhoViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		131E8DD427162D050084A230 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				131E8DD727162D2A0084A230 /* ProdutoData.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		134FA97C2714C2390043F1EA = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +72,9 @@
 		134FA9872714C2390043F1EA /* RapFarmaApp */ = {
 			isa = PBXGroup;
 			children = (
+				131E8DD427162D050084A230 /* CoreData */,
+				1367257C271615D500797A8E /* Cell */,
+				1367257B271615CC00797A8E /* ViewControllers */,
 				134FA9882714C2390043F1EA /* AppDelegate.swift */,
 				134FA98A2714C2390043F1EA /* SceneDelegate.swift */,
 				134FA98C2714C2390043F1EA /* ViewController.swift */,
@@ -68,6 +85,22 @@
 				134FA9912714C2390043F1EA /* RapFarmaApp.xcdatamodeld */,
 			);
 			path = RapFarmaApp;
+			sourceTree = "<group>";
+		};
+		1367257B271615CC00797A8E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1367257D271615FC00797A8E /* CarrinhoViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1367257C271615D500797A8E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1367257F2716162F00797A8E /* CarrinhoViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1367257E271615FC00797A8E /* CarrinhoViewController.swift in Sources */,
 				134FA98D2714C2390043F1EA /* ViewController.swift in Sources */,
+				131E8DD827162D2A0084A230 /* ProdutoData.swift in Sources */,
 				134FA9892714C2390043F1EA /* AppDelegate.swift in Sources */,
 				134FA98B2714C2390043F1EA /* SceneDelegate.swift in Sources */,
+				136725802716162F00797A8E /* CarrinhoViewCell.swift in Sources */,
 				134FA9932714C2390043F1EA /* RapFarmaApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
