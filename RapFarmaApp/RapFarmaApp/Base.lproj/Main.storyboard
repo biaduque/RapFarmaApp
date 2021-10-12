@@ -72,12 +72,72 @@
         <!--Minha conta-->
         <scene sceneID="Ja4-2M-a9z">
             <objects>
-                <viewController id="f5J-dw-Iys" sceneMemberID="viewController">
+                <viewController id="f5J-dw-Iys" customClass="ContaViewController" customModule="RapFarmaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cgF-aW-1UA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="S9D-8d-kvJ">
+                                <rect key="frame" x="0.0" y="88" width="383" height="338"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="338" id="29H-mn-ko1"/>
+                                    <constraint firstAttribute="width" constant="383" id="GNA-Id-ExF"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tableCell" id="4e4-Ai-taS" customClass="ContaTableViewCell" customModule="RapFarmaApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="383" height="35"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4e4-Ai-taS" id="GXd-ge-4Be">
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="35"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vYy-B1-LJm">
+                                                    <rect key="frame" x="20" y="0.0" width="343" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="334" id="l2S-OE-dGu"/>
+                                                        <constraint firstAttribute="height" constant="34.5" id="qYR-sa-WXf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vYy-B1-LJm" firstAttribute="top" secondItem="GXd-ge-4Be" secondAttribute="top" id="Aq4-p2-gy0"/>
+                                                <constraint firstAttribute="bottom" secondItem="vYy-B1-LJm" secondAttribute="bottom" id="ued-F4-tZ9"/>
+                                                <constraint firstAttribute="trailing" secondItem="vYy-B1-LJm" secondAttribute="trailing" constant="20" id="xT0-rI-Fzz"/>
+                                                <constraint firstItem="vYy-B1-LJm" firstAttribute="leading" secondItem="GXd-ge-4Be" secondAttribute="leading" constant="20" id="zMB-kp-wcG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="textField" destination="vYy-B1-LJm" id="IeG-a2-X4z"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Unp-1Q-ApS">
+                                <rect key="frame" x="73" y="743" width="268" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="fZ8-cI-rHU"/>
+                                    <constraint firstAttribute="width" constant="268" id="j67-bl-DII"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Salvar alterações"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="71o-IS-pej"/>
                         <color key="backgroundColor" name="Background"/>
+                        <constraints>
+                            <constraint firstItem="71o-IS-pej" firstAttribute="trailing" secondItem="Unp-1Q-ApS" secondAttribute="trailing" constant="73" id="3ia-OA-JtO"/>
+                            <constraint firstItem="Unp-1Q-ApS" firstAttribute="top" secondItem="S9D-8d-kvJ" secondAttribute="bottom" constant="317" id="6Qt-FT-Da1"/>
+                            <constraint firstItem="Unp-1Q-ApS" firstAttribute="bottom" secondItem="71o-IS-pej" secondAttribute="bottom" constant="-31" id="7Y9-2f-ZeP"/>
+                            <constraint firstItem="S9D-8d-kvJ" firstAttribute="top" secondItem="71o-IS-pej" secondAttribute="top" id="FaY-Xv-5Sr"/>
+                            <constraint firstItem="71o-IS-pej" firstAttribute="bottom" secondItem="S9D-8d-kvJ" secondAttribute="bottom" constant="387" id="PiR-kA-xPG"/>
+                            <constraint firstItem="Unp-1Q-ApS" firstAttribute="leading" secondItem="71o-IS-pej" secondAttribute="leading" constant="73" id="Qh3-QE-iAE"/>
+                            <constraint firstItem="71o-IS-pej" firstAttribute="trailing" secondItem="S9D-8d-kvJ" secondAttribute="trailing" constant="31" id="def-FM-dub"/>
+                            <constraint firstItem="Unp-1Q-ApS" firstAttribute="bottom" secondItem="71o-IS-pej" secondAttribute="bottom" constant="-31" id="lor-Tg-uhO"/>
+                            <constraint firstItem="S9D-8d-kvJ" firstAttribute="leading" secondItem="71o-IS-pej" secondAttribute="leading" id="tvF-b4-brp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Minha conta" id="tlT-zK-gha">
                         <barButtonItem key="rightBarButtonItem" image="info.circle" catalog="system" style="done" id="WoP-jq-2YN">
@@ -86,10 +146,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="infosTable" destination="S9D-8d-kvJ" id="9t2-c3-h10"/>
+                        <outlet property="saveInfosButton" destination="Unp-1Q-ApS" id="NHz-LG-dWz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J7b-Jk-cIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4225" y="386"/>
+            <point key="canvasLocation" x="4224.6376811594209" y="385.71428571428572"/>
         </scene>
         <!--Carrinho-->
         <scene sceneID="G5G-IN-swE">
@@ -365,7 +429,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XLG-rk-x79"/>
+        <segue reference="4nP-hB-v2T"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="Accent"/>
     <resources>
