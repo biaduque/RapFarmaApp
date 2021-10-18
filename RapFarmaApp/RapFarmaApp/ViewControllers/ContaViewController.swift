@@ -20,7 +20,18 @@ class ContaViewController: UIViewController {
         infosTable.dataSource = self
         // Do any additional setup after loading the view.
     }
+    func alertSave(){
+        let ac = UIAlertController(title:"Alterações salvas", message: "As alterações realizadas em sua conta foram salvas!", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
+                [weak self] action in
+                //
+        }))
+        present(ac, animated: true)
+    }
     
+    @IBAction func saveAction(_ sender: Any) {
+        alertSave()
+    }
 }
 
 extension ContaViewController: UITableViewDelegate{

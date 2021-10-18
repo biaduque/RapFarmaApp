@@ -57,7 +57,6 @@ class ProdutosData{
     
     func addProducts(produto: Produto) {
         let prod = Produto(context: self.persistentContainer.viewContext)
-
         self.saveContext()
     }
     
