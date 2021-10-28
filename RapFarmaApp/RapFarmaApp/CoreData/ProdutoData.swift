@@ -55,11 +55,24 @@ class ProdutosData{
         return []
     }
     
-    func addProducts(produto: Produto) {
+    func addProducts(nome: String, quantidade: Int32,valorUni: Int32) {
         let prod = Produto(context: self.persistentContainer.viewContext)
+        prod.nome = nome
+        prod.quantidade = quantidade
+        
+        prod.valorUnitario = valorUni
+        
+        
         self.saveContext()
     }
+    func setQuantidade(produto: Produto){
+        produto.quantidade = produto.quantidade + Int32(1)
+    }
     
+    func setValorTotal(produto: Produto,quantidade:Int32){
+        produto.valorTotal = produto.valorUnitario * quantidade
+        saveContext()
+    }
     func deleta(item: Produto) throws{
         self.persistentContainer.viewContext.delete(item)
         self.saveContext()
