@@ -10,6 +10,7 @@ protocol CatalogoTableViewCellDelegate: AnyObject {
     func didAdd()
 }
 
+
 class CatalogoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imgProduto: UIImageView!

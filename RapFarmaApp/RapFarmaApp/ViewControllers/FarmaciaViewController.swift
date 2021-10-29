@@ -7,7 +7,11 @@
 
 import UIKit
 
-class FarmaciaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol FarmaciaViewControllerDelegate: AnyObject{
+    func addCarrinho()
+}
+
+class FarmaciaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarControllerDelegate {
 
     @IBOutlet weak var tableCatalogo: UITableView!
     
@@ -25,7 +29,10 @@ class FarmaciaViewController: UIViewController, UITableViewDelegate, UITableView
     @IBOutlet weak var star5: UIImageView!
     private lazy var vetStars: [UIImageView] = [star1,star2,star3,star4,star5]
 
+    private var carrinho: [Produto] = []
     
+    weak var delegate: FarmaciaViewControllerDelegate?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -54,9 +61,11 @@ class FarmaciaViewController: UIViewController, UITableViewDelegate, UITableView
 
     
     @IBAction func goCarrinhoButton(_ sender: Any) {
+        delegate?.addCarrinho()
         tabBarController?.selectedIndex = 1
+
     }
-    
+
     func setContent(){
         ///distancia
         distanceLabel.text = "1,3km"
@@ -76,9 +85,31 @@ extension FarmaciaViewController: CatalogoTableViewCellDelegate{
         let ac = UIAlertController(title:"Produto adicionado", message: "O produto foi adicionado em seu carrinho.", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
                 [weak self] action in
-                //
+                ///adiciona no carrinho quando clica no botao
+                self?.carrinho = ProdutosData.shared.getProducts()
+                
+                if !((self?.carrinho.isEmpty)!){
+                    let exists = self?.carrinho.filter{ $0.nome == "Dipirona" }
+                    //so adiciona um novo livro se ele ainda nao foi adicionado
+                    if exists?.count == 0{
+                        ProdutosData.shared.addProducts(nome: "Dipirona", quantidade: Int32(1), valorUni: Int32(4))
+                        
+                    }
+                    else{
+                        ProdutosData.shared.setQuantidade(produto: (exists?[0])!)
+                        ProdutosData.shared.setValorTotal(produto: (exists?[0])!, quantidade: (exists?[0].quantidade)!)
+                        ProdutosData.shared.saveContext()
+                    }
+                }
+                else{
+                    ProdutosData.shared.addProducts(nome: "Dipirona", quantidade: Int32(1), valorUni: Int32(4))
+                    ProdutosData.shared.saveContext()
+
+                }
+                
+            
         }))
+        delegate?.addCarrinho()
         present(ac, animated: true)
-        print("clicou")
     }
 }

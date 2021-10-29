@@ -7,6 +7,8 @@
 
 import UIKit
 
+
+
 class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var orderButton: UIButton!
@@ -15,16 +17,27 @@ class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UIColl
     @IBOutlet weak var collectionCarrinho: UICollectionView!
     
     private var totalCount = 0
+
+    weak var delegate: FarmaciaViewControllerDelegate?
+
+    private var carrinho:[Produto] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionCarrinho.delegate = self
         collectionCarrinho.dataSource = self
-        totalLabel.text = "R$\(String(totalCount))"
+        carrinho = ProdutosData.shared.getProducts()
+        reloadTotal()
+        
+        if let vc = storyboard?.instantiateViewController(identifier: "carrinho") as?
+            FarmaciaViewController {
+            vc.delegate = self
+        }
+        print(carrinho)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
+        carrinho.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -32,10 +45,28 @@ class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UIColl
         
         if let cell: CarrinhoViewCell  = collectionView.dequeueReusableCell(withReuseIdentifier: "carrinhoCell", for: indexPath as IndexPath) as? CarrinhoViewCell {
             cell.backgroundColor = .systemBackground
+            cell.productName.text = carrinho[indexPath.row].nome
+            cell.priceUnityLabel.text = "R$ \(String(carrinho[indexPath.row].valorUnitario))"
+            cell.totalValuePrice.text = "R$ \(String(carrinho[indexPath.row].valorTotal))"
+            cell.countLabel.text = String(carrinho[indexPath.row].quantidade)
+            
             cell.stylize()
-            totalCount = Int(cell.totalValuePrice.text!) ?? 0 + totalCount
+            
             cellBase = cell
         }
         return cellBase
+    }
+    func reloadTotal(){
+        for i in 0..<carrinho.count{
+            totalCount = Int(carrinho[i].valorTotal) + totalCount
+        }
+        totalLabel.text = "R$ \(String(totalCount))"
+    }
+}
+
+extension CarrinhoViewController: FarmaciaViewControllerDelegate{
+    func addCarrinho() {
+        collectionCarrinho.reloadData()
+        reloadTotal()
     }
 }
