@@ -9,6 +9,7 @@ import UIKit
 
 
 
+
 class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var orderButton: UIButton!
@@ -16,7 +17,7 @@ class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     @IBOutlet weak var collectionCarrinho: UICollectionView!
     
-    private var totalCount = 0
+    private var totalCount = 0.0
 
     weak var delegate: FarmaciaViewControllerDelegate?
 
@@ -33,7 +34,11 @@ class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UIColl
             FarmaciaViewController {
             vc.delegate = self
         }
-        print(carrinho)
+        
+        if let vc = storyboard?.instantiateViewController(identifier: "newPedido") as?
+            NewPedidoViewController {
+            vc.delegateCarrinho = self
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -58,10 +63,23 @@ class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UIColl
     }
     func reloadTotal(){
         for i in 0..<carrinho.count{
-            totalCount = Int(carrinho[i].valorTotal) + totalCount
+            totalCount = Double(Float(carrinho[i].valorTotal)) + totalCount
         }
-        totalLabel.text = "R$ \(String(totalCount))"
+        totalLabel.text = (String(format:"R$ %.2f",totalCount))
     }
+    
+    ///botao que realiza o pedido
+    @IBAction func orderAction(_ sender: Any) {
+        if let vc = storyboard?.instantiateViewController(identifier: "newPedido") as?
+                    NewPedidoViewController {
+            vc.subtotal = Float(totalCount)
+            vc.entrega = Float(12)
+            vc.total = Float(totalCount)+Float(12)
+            vc.farma = "remedioDefault"
+            navigationController?.present(vc, animated: true)
+        }
+    }
+    
 }
 
 extension CarrinhoViewController: FarmaciaViewControllerDelegate{

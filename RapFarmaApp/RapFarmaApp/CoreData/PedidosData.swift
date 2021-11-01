@@ -1,15 +1,15 @@
 //
-//  ProdutoData.swift
+//  PedidosData.swift
 //  RapFarmaApp
 //
-//  Created by Beatriz Duque on 12/10/21.
+//  Created by Beatriz Duque on 01/11/21.
 //
 
 import Foundation
 import CoreData
 
-class ProdutosData{
-    static let shared:ProdutosData = ProdutosData()
+class PedidosData{
+    static let shared:PedidosData = PedidosData()
     
     var contenxt: NSManagedObjectContext {
         persistentContainer.viewContext
@@ -44,8 +44,8 @@ class ProdutosData{
     }
     
     // Buscar todas as reuniões no banco de dados
-    func getProducts() -> [Produto] {
-        let fr = NSFetchRequest<Produto>(entityName: "Produto")
+    func getOrder() -> [Pedidos] {
+        let fr = NSFetchRequest<Pedidos>(entityName: "Pedidos")
         do {
             return try self.persistentContainer.viewContext.fetch(fr)
         }catch {
@@ -55,26 +55,19 @@ class ProdutosData{
         return []
     }
     
-    func addProducts(nome: String, quantidade: Int32,valorUni: Float) {
-        let prod = Produto(context: self.persistentContainer.viewContext)
-        prod.nome = nome
-        prod.quantidade = quantidade
+    func addOrder(nome: String, status: Int32,farma:String) {
+        let pedido = Pedidos(context: self.persistentContainer.viewContext)
+        pedido.nome = nome
+        pedido.status = status
+        pedido.farma = farma
         
-        prod.valorUnitario = valorUni
-        
-        self.setValorTotal(produto: prod, quantidade: 1)
-        
+        let pedidos = getOrder()
+        if pedidos.count > 1 {
+            pedidos[pedidos.count-1].status = 0
+        }
         self.saveContext()
     }
-    func setQuantidade(produto: Produto){
-        produto.quantidade = produto.quantidade + Int32(1)
-    }
-    
-    func setValorTotal(produto: Produto,quantidade:Int32){
-        produto.valorTotal = produto.valorUnitario * Float(quantidade)
-        saveContext()
-    }
-    func deleta(item: Produto) throws{
+    func deleta(item: Pedidos) throws{
         self.persistentContainer.viewContext.delete(item)
         self.saveContext()
     }
