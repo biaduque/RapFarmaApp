@@ -1,0 +1,428 @@
+﻿{
+    "Farmacias": [
+        {
+            "Farmacia": "Drogaria São Paulo",
+            "Distancia": "1.3km",
+            "Endereco": "R. Dr. César Castiglioni Júnior, 225",
+            "Rating": 4,
+            "Catalogo": [
+                {
+                    "Remedio": "Forxiga",
+                    "Dosagem": "10mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Diabetes",
+                    "Preco": "131.65",
+                    "Imagem": "dSP1"
+                },
+                {
+                    "Remedio": "Aleandronato de Sódio",
+                    "Dosagem": "70mg",
+                    "Quantidade": "8 comprimidos",
+                    "Indicacao": "Osteoporose",
+                    "Preco": "14.79",
+                    "Imagem": "dSP1"
+                },
+                {
+                    "Remedio": "Atenolol",
+                    "Dosagem": "25mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Hipertensão",
+                    "Preco": "5.63",
+                    "Imagem": "dSP1"
+                },
+                {
+                    "Remedio": "Budesonida",
+                    "Dosagem": "32mcg",
+                    "Quantidade": "120 doses",
+                    "Indicacao": "Rinite",
+                    "Preco": "12.89",
+                    "Imagem": "dSP1"
+                },
+                {
+                    "Remedio": "Glibenclamida",
+                    "Dosagem": "5mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Diabetes",
+                    "Preco": "2.60",
+                    "Imagem": "dSP1"
+                },
+                {
+                    "Remedio": "Maleato de Enalapril",
+                    "Dosagem": "5mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Hipertensão",
+                    "Preco": "3.26",
+                    "Imagem": "dSP1"
+                },
+                {
+                    "Remedio": "Maleato de Timolol",
+                    "Dosagem": "5ml",
+                    "Quantidade": "5ml",
+                    "Indicacao": "Glaucoma",
+                    "Preco": "9.45",
+                    "Imagem": "dSP1"
+                }
+            ]
+        },
+        {
+            "Farmacia": "Drogasil",
+            "Distancia": "5.7km",
+            "Endereco": "Rua Desembargador do Vale, 1062",
+            "Rating": 3,
+            "Catalogo": [
+                {
+                    "Remedio": "Sinvastatina",
+                    "Dosagem": "20mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Dislipidemia",
+                    "Preco": "9.59",
+                    "Imagem": "dSIL1"
+                },
+                {
+                    "Remedio": "Dorflex",
+                    "Dosagem": "385mg",
+                    "Quantidade": "50 comprimidos",
+                    "Indicacao": "Dores",
+                    "Preco": "19.39",
+                    "Imagem": "dorflex"
+                },
+                {
+                    "Remedio": "Xarelto",
+                    "Dosagem": "20mg",
+                    "Quantidade": "28 comprimidos",
+                    "Indicacao": "Trombose",
+                    "Preco": "133.99",
+                    "Imagem": "dSIL1"
+                },
+                {
+                    "Remedio": "Neosaldina",
+                    "Dosagem": "360mg",
+                    "Quantidade": "30 drágeas",
+                    "Indicacao": "Dor de Cabeça",
+                    "Preco": "26.84",
+                    "Imagem": "neosal"
+                },
+                {
+                    "Remedio": "Hidroclorotiazida",
+                    "Dosagem": "25mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Hipertensão",
+                    "Preco": "2.33",
+                    "Imagem": "dSIL1"
+                },
+                {
+                    "Remedio": "Sulfato de Salbutamol",
+                    "Dosagem": "4mg",
+                    "Quantidade": "20 comprimidos",
+                    "Indicacao": "Asma",
+                    "Preco": "10.59",
+                    "Imagem": "dSIL1"
+                }
+            ]
+        },
+        {
+            "Farmacia": "Droga Raia",
+            "Distancia": "6.1km",
+            "Endereco": "Av. Marquês de São Vicente, 2219",
+            "Rating": 4,
+            "Catalogo": [
+                {
+                    "Remedio": "Torsilax",
+                    "Dosagem": "505mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Dores",
+                    "Preco": "17.57",
+                    "Imagem": "dRAIA1"
+                },
+                {
+                    "Remedio": "Budesonida",
+                    "Dosagem": "32mcg",
+                    "Quantidade": "120 doses",
+                    "Indicacao": "Rinite",
+                    "Preco": "13.09",
+                    "Imagem": "dRAIA1"
+                },
+                {
+                    "Remedio": "Brometo de Ipratrópio",
+                    "Dosagem": "0.25mg/ml",
+                    "Quantidade": "20ml",
+                    "Indicacao": "Asma",
+                    "Preco": "5.89",
+                    "Imagem": "dRAIA1"
+                },
+                {
+                    "Remedio": "Nimesulida",
+                    "Dosagem": "100mg",
+                    "Quantidade": "12 comprimidos",
+                    "Indicacao": "Dores",
+                    "Preco": "35.19",
+                    "Imagem": "dRAIA1"
+                },
+                {
+                    "Remedio": "Aspirina",
+                    "Dosagem": "100mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Dor de Cabeça",
+                    "Preco": "16.89",
+                    "Imagem": "dRAIA1"
+                },
+                {
+                    "Remedio": "Atenolol",
+                    "Dosagem": "25mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Hipertensão",
+                    "Preco": "3.69",
+                    "Imagem": "dRAIA1"
+                }
+            ]
+        },
+        {
+            "Farmacia": "Drogaria Bifarma",
+            "Distancia": "3.2km",
+            "Endereco": "R. Clemente Álvares, 278",
+            "Rating": 5,
+            "Catalogo": [
+                {
+                    "Remedio": "Cetoprofeno",
+                    "Dosagem": "50mg",
+                    "Quantidade": "24 cápsulas",
+                    "Indicacao": "Artrite",
+                    "Preco": "19.23",
+                    "Imagem": "dBI1"
+                },
+                {
+                    "Remedio": "Bromoprida",
+                    "Dosagem": "4mg",
+                    "Quantidade": "2mL",
+                    "Indicacao": "Refluxo",
+                    "Preco": "7.18",
+                    "Imagem": "dBI1"
+                },
+                {
+                    "Remedio": "Lisinopril",
+                    "Dosagem": "10mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Hipertensão",
+                    "Preco": "28.67",
+                    "Imagem": "dBI1"
+                },
+                {
+                    "Remedio": "Pantoprazol",
+                    "Dosagem": "20mg",
+                    "Quantidade": "28 comprimidos",
+                    "Indicacao": "Gastrite",
+                    "Preco": "17.93",
+                    "Imagem": "dBI1"
+                },
+                {
+                    "Remedio": "Propionato de Clobetasol",
+                    "Dosagem": "30g",
+                    "Quantidade": "Creme 30g",
+                    "Indicacao": "Dermatose",
+                    "Preco": "13.34",
+                    "Imagem": "dBI1"
+                },
+                {
+                    "Remedio": "Travoprosta",
+                    "Dosagem": "0.04mg",
+                    "Quantidade": "2.5mL",
+                    "Indicacao": "Glaucoma",
+                    "Preco": "14.44",
+                    "Imagem": "dBI1"
+                },
+                {
+                    "Remedio": "Itraconazol",
+                    "Dosagem": "100mg",
+                    "Quantidade": "4 cápsulas",
+                    "Indicacao": "Micose",
+                    "Preco": "28.63",
+                    "Imagem": "dBI1"
+                }
+            ]
+        },
+        {
+            "Farmacia": "Drogaria São Paulo",
+            "Distancia": "4.8km",
+            "Endereco": "Av. Rebouças, 2036",
+            "Rating": 4,
+            "Catalogo": [
+                {
+                    "Remedio": "Cloridrato De Metoclopramida",
+                    "Dosagem": "4mg",
+                    "Quantidade": "10ml",
+                    "Indicacao": "Enjoo",
+                    "Preco": "3.40",
+                    "Imagem": "dSP1"
+                },
+                {
+                    "Remedio": "Nimesulida",
+                    "Dosagem": "100mg",
+                    "Quantidade": "12 comprimidos",
+                    "Indicacao": "Dores",
+                    "Preco": "9.79",
+                    "Imagem": "dSP1"
+                },
+                {
+                    "Remedio": "Atenolol",
+                    "Dosagem": "25mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Hipertensão",
+                    "Preco": "5.63",
+                    "Imagem": "dSP1"
+                },
+                {
+                    "Remedio": "Metformina",
+                    "Dosagem": "850mg",
+                    "Quantidade": "30 cápsulas",
+                    "Indicacao": "Diabetes",
+                    "Preco": "4.54",
+                    "Imagem": "dSP1"
+                },
+                {
+                    "Remedio": "Qlaira Bayer",
+                    "Dosagem": "14mg",
+                    "Quantidade": "28 comprimidos",
+                    "Indicacao": "Contracepção",
+                    "Preco": "41.38",
+                    "Imagem": "dSP1"
+                },
+                {
+                    "Remedio": "Maleato de Enalapril",
+                    "Dosagem": "5mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Hipertensão",
+                    "Preco": "3.26",
+                    "Imagem": "dSP1"
+                },
+                {
+                    "Remedio": "Flucomed",
+                    "Dosagem": "150mg",
+                    "Quantidade": "1 comprimido",
+                    "Indicacao": "Candidíase vaginal",
+                    "Preco": "4.48",
+                    "Imagem": "dSP1"
+                }
+            ]
+        },
+        {
+            "Farmacia": "Drogarias Pacheco",
+            "Distancia": "7.7km",
+            "Endereco": "R. Benjamin Constant, 260",
+            "Rating": 4,
+            "Catalogo": [
+                {
+                    "Remedio": "Glibenclamida",
+                    "Dosagem": "5mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Diabetes",
+                    "Preco": "2.68",
+                    "Imagem": "dPA1"
+                },
+                {
+                    "Remedio": "Hidroclorotiazida",
+                    "Dosagem": "25mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Hipertensão",
+                    "Preco": "1.97",
+                    "Imagem": "dPA1"
+                },
+                {
+                    "Remedio": "Alopurinol",
+                    "Dosagem": "100mg",
+                    "Quantidade": "30 cápsulas",
+                    "Indicacao": "Pedra nos Rins",
+                    "Preco": "4.64",
+                    "Imagem": "dPA1"
+                },
+                {
+                    "Remedio": "Daflon",
+                    "Dosagem": "1000mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Insuficiência Venosa",
+                    "Preco": "102.96",
+                    "Imagem": "dPA1"
+                },
+                {
+                    "Remedio": "Cloridrato de Propranolol",
+                    "Dosagem": "40mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Pressão Alta",
+                    "Preco": "2.13",
+                    "Imagem": "dPA1"
+                },
+                {
+                    "Remedio": "Novalgina",
+                    "Dosagem": "1g",
+                    "Quantidade": "10 comprimidos",
+                    "Indicacao": "Febre",
+                    "Preco": "23.95",
+                    "Imagem": "novalgina"
+                },
+                {
+                    "Remedio": "Neosoro",
+                    "Dosagem": "30ml",
+                    "Quantidade": "Solução 30ml",
+                    "Indicacao": "Congestionamento Nasal",
+                    "Preco": "10.14",
+                    "Imagem": "dPA1"
+                }
+            ]
+        },
+        {
+            "Farmacia": "Droga Raia",
+            "Distancia": "2.9km",
+            "Endereco": "Av. Itaberaba, 1813",
+            "Rating": 4,
+            "Catalogo": [
+                {
+                    "Remedio": "Qlaira",
+                    "Dosagem": "13mg",
+                    "Quantidade": "28 comprimidos",
+                    "Indicacao": "Contracepção",
+                    "Preco": "41.80",
+                    "Imagem": "dRAIA1"
+                },
+                {
+                    "Remedio": "Budesonida",
+                    "Dosagem": "32mcg",
+                    "Quantidade": "120 doses",
+                    "Indicacao": "Rinite",
+                    "Preco": "13.09",
+                    "Imagem": "dRAIA1"
+                },
+                {
+                    "Remedio": "Losartana Potássica",
+                    "Dosagem": "50mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Hipertensão",
+                    "Preco": "3.99",
+                    "Imagem": "dRAIA1"
+                },
+                {
+                    "Remedio": "Roacutan",
+                    "Dosagem": "20mg",
+                    "Quantidade": "30 cápsulas",
+                    "Indicacao": "Acne",
+                    "Preco": "149.00",
+                    "Imagem": "dRAIA1"
+                },
+                {
+                    "Remedio": "Aspirina",
+                    "Dosagem": "100mg",
+                    "Quantidade": "30 comprimidos",
+                    "Indicacao": "Dor de Cabeça",
+                    "Preco": "16.89",
+                    "Imagem": "dRAIA1"
+                },
+                {
+                    "Remedio": "Cloridrato de Naratriptana",
+                    "Dosagem": "2.5mg",
+                    "Quantidade": "10 comprimidos",
+                    "Indicacao": "Enxaqueca",
+                    "Preco": "18.19",
+                    "Imagem": "dRAIA1"
+                }
+            ]
+        }
+    ]
+}

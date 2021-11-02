@@ -10,6 +10,13 @@
 		131E8DD827162D2A0084A230 /* ProdutoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131E8DD727162D2A0084A230 /* ProdutoData.swift */; };
 		131E8DDA271631E30084A230 /* ContaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131E8DD9271631E30084A230 /* ContaViewController.swift */; };
 		131E8DDC2716331A0084A230 /* ContaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 131E8DDB2716331A0084A230 /* ContaTableViewCell.swift */; };
+		13213F4327305612002966C4 /* remedios.json in Resources */ = {isa = PBXBuildFile; fileRef = 13213F4227305612002966C4 /* remedios.json */; };
+		13213F4627305670002966C4 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13213F4527305670002966C4 /* ModelData.swift */; };
+		13213F4827305698002966C4 /* Farmacias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13213F4727305698002966C4 /* Farmacias.swift */; };
+		13213F4A27305794002966C4 /* Remedios.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13213F4927305794002966C4 /* Remedios.swift */; };
+		13213F4C27307540002966C4 /* PedidosData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13213F4B27307540002966C4 /* PedidosData.swift */; };
+		13213F5027307C6B002966C4 /* NewPedidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13213F4F27307C6B002966C4 /* NewPedidoViewController.swift */; };
+		13213F52273192C2002966C4 /* MoreInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13213F51273192C2002966C4 /* MoreInfoViewController.swift */; };
 		134FA9892714C2390043F1EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FA9882714C2390043F1EA /* AppDelegate.swift */; };
 		134FA98B2714C2390043F1EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FA98A2714C2390043F1EA /* SceneDelegate.swift */; };
 		134FA98D2714C2390043F1EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134FA98C2714C2390043F1EA /* ViewController.swift */; };
@@ -32,6 +39,13 @@
 		131E8DD727162D2A0084A230 /* ProdutoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProdutoData.swift; sourceTree = "<group>"; };
 		131E8DD9271631E30084A230 /* ContaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContaViewController.swift; sourceTree = "<group>"; };
 		131E8DDB2716331A0084A230 /* ContaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContaTableViewCell.swift; sourceTree = "<group>"; };
+		13213F4227305612002966C4 /* remedios.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = remedios.json; sourceTree = "<group>"; };
+		13213F4527305670002966C4 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		13213F4727305698002966C4 /* Farmacias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Farmacias.swift; sourceTree = "<group>"; };
+		13213F4927305794002966C4 /* Remedios.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remedios.swift; sourceTree = "<group>"; };
+		13213F4B27307540002966C4 /* PedidosData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PedidosData.swift; sourceTree = "<group>"; };
+		13213F4F27307C6B002966C4 /* NewPedidoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPedidoViewController.swift; sourceTree = "<group>"; };
+		13213F51273192C2002966C4 /* MoreInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreInfoViewController.swift; sourceTree = "<group>"; };
 		134FA9852714C2390043F1EA /* RapFarmaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RapFarmaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		134FA9882714C2390043F1EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		134FA98A2714C2390043F1EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,8 +81,27 @@
 			isa = PBXGroup;
 			children = (
 				131E8DD727162D2A0084A230 /* ProdutoData.swift */,
+				13213F4B27307540002966C4 /* PedidosData.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		13213F41273055FF002966C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				13213F4227305612002966C4 /* remedios.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		13213F442730565C002966C4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13213F4527305670002966C4 /* ModelData.swift */,
+				13213F4727305698002966C4 /* Farmacias.swift */,
+				13213F4927305794002966C4 /* Remedios.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		134FA97C2714C2390043F1EA = {
@@ -90,6 +123,8 @@
 		134FA9872714C2390043F1EA /* RapFarmaApp */ = {
 			isa = PBXGroup;
 			children = (
+				13213F442730565C002966C4 /* Model */,
+				13213F41273055FF002966C4 /* Resources */,
 				131E8DD427162D050084A230 /* CoreData */,
 				1367257C271615D500797A8E /* Cell */,
 				1367257B271615CC00797A8E /* ViewControllers */,
@@ -114,6 +149,8 @@
 				13E3E36B271E02AF006D6D37 /* PedidosViewController.swift */,
 				13E3E36F271E04E6006D6D37 /* SugestoesViewController.swift */,
 				13E3E373271E0946006D6D37 /* FarmaciaViewController.swift */,
+				13213F4F27307C6B002966C4 /* NewPedidoViewController.swift */,
+				13213F51273192C2002966C4 /* MoreInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -197,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				134FA9982714C23A0043F1EA /* LaunchScreen.storyboard in Resources */,
+				13213F4327305612002966C4 /* remedios.json in Resources */,
 				134FA9952714C23A0043F1EA /* Assets.xcassets in Resources */,
 				134FA9902714C2390043F1EA /* Main.storyboard in Resources */,
 			);
@@ -209,22 +247,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13213F4627305670002966C4 /* ModelData.swift in Sources */,
 				131E8DDA271631E30084A230 /* ContaViewController.swift in Sources */,
 				1367257E271615FC00797A8E /* CarrinhoViewController.swift in Sources */,
 				13E3E379271E15E2006D6D37 /* starsView.swift in Sources */,
 				13E3E374271E0946006D6D37 /* FarmaciaViewController.swift in Sources */,
+				13213F52273192C2002966C4 /* MoreInfoViewController.swift in Sources */,
 				134FA98D2714C2390043F1EA /* ViewController.swift in Sources */,
+				13213F4C27307540002966C4 /* PedidosData.swift in Sources */,
 				131E8DD827162D2A0084A230 /* ProdutoData.swift in Sources */,
 				13E3E36E271E02C8006D6D37 /* PedidosViewCell.swift in Sources */,
 				134FA9892714C2390043F1EA /* AppDelegate.swift in Sources */,
+				13213F5027307C6B002966C4 /* NewPedidoViewController.swift in Sources */,
 				13E3E36C271E02AF006D6D37 /* PedidosViewController.swift in Sources */,
 				134FA98B2714C2390043F1EA /* SceneDelegate.swift in Sources */,
 				13E3E372271E051A006D6D37 /* SugestoesCollectionViewCell.swift in Sources */,
 				131E8DDC2716331A0084A230 /* ContaTableViewCell.swift in Sources */,
+				13213F4A27305794002966C4 /* Remedios.swift in Sources */,
 				13E3E370271E04E6006D6D37 /* SugestoesViewController.swift in Sources */,
 				136725802716162F00797A8E /* CarrinhoViewCell.swift in Sources */,
 				134FA9932714C2390043F1EA /* RapFarmaApp.xcdatamodeld in Sources */,
 				13E3E376271E0E73006D6D37 /* CatalogoTableViewCell.swift in Sources */,
+				13213F4827305698002966C4 /* Farmacias.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,7 +429,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = biaduque.RapFarmaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -413,7 +457,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = biaduque.RapFarmaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

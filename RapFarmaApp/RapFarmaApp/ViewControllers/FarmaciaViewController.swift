@@ -12,12 +12,13 @@ protocol FarmaciaViewControllerDelegate: AnyObject{
 }
 
 class FarmaciaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarControllerDelegate {
+    
 
     @IBOutlet weak var tableCatalogo: UITableView!
     
-    @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var endLabel: UILabel!
-    @IBOutlet weak var starsView: starsView!
+    @IBOutlet weak var distanceLabel: UILabel?
+    @IBOutlet weak var endLabel: UILabel?
+    @IBOutlet weak var starsView: starsView?
     
     @IBOutlet weak var goCarrinhoButton: UIButton!
     
@@ -31,25 +32,29 @@ class FarmaciaViewController: UIViewController, UITableViewDelegate, UITableView
 
     private var carrinho: [Produto] = []
     
+    public var farmaciaSelected: Farmacias!
+    
     weak var delegate: FarmaciaViewControllerDelegate?
 
+    override func viewWillAppear(_ animated: Bool) {
+        setContent()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         tableCatalogo.delegate = self
         tableCatalogo.dataSource = self
-        
-        ///definido o conteudo da pagina
-        setContent()
     }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return farmaciaSelected.Catalogo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "catalogoCell", for: indexPath) as! CatalogoTableViewCell
         cell.delegate = self
+        cell.contentCell = farmaciaSelected.Catalogo[indexPath.row]
+        cell.setContent(Catalogo: farmaciaSelected.Catalogo[indexPath.row])
         return cell
     }
     
@@ -67,21 +72,24 @@ class FarmaciaViewController: UIViewController, UITableViewDelegate, UITableView
     }
 
     func setContent(){
+        ///
+        navigationItem.title = farmaciaSelected.Farmacia
         ///distancia
-        distanceLabel.text = "1,3km"
+        distanceLabel?.text = farmaciaSelected.Distancia
         ///endereco
-        endLabel.text = "R. Antonio Alves de Souza, 22"
+        endLabel?.text = farmaciaSelected.Endereco
         ///rating
-        starsView.setRating(rating: 3)
-        starsView.styleWithRating(vet: vetStars)
+        starsView?.setRating(rating: farmaciaSelected.Rating)
+        starsView?.styleWithRating(vet: vetStars)
         ///catalogo de produtos
         
     }
+    
 }
 
 ///funcoes delegate utilizadas para atualizar o conteudo da view
 extension FarmaciaViewController: CatalogoTableViewCellDelegate{
-    func didAdd() {
+    func didAdd(content: Farmacias.Catalogo) {
         let ac = UIAlertController(title:"Produto adicionado", message: "O produto foi adicionado em seu carrinho.", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: {
                 [weak self] action in
@@ -89,23 +97,22 @@ extension FarmaciaViewController: CatalogoTableViewCellDelegate{
                 self?.carrinho = ProdutosData.shared.getProducts()
                 
                 if !((self?.carrinho.isEmpty)!){
-                    let exists = self?.carrinho.filter{ $0.nome == "Dipirona" }
+                    let exists = self?.carrinho.filter{ $0.nome == content.Remedio }
                     //so adiciona um novo livro se ele ainda nao foi adicionado
                     if exists?.count == 0{
-                        ProdutosData.shared.addProducts(nome: "Dipirona", quantidade: Int32(1), valorUni: Int32(4))
+                        ProdutosData.shared.addProducts(nome: content.Remedio, quantidade: Int32(1), valorUni: Float(content.Preco) ?? 0.0)
                         
                     }
                     else{
                         ProdutosData.shared.setQuantidade(produto: (exists?[0])!)
                         ProdutosData.shared.setValorTotal(produto: (exists?[0])!, quantidade: (exists?[0].quantidade)!)
-                        ProdutosData.shared.saveContext()
                     }
                 }
                 else{
-                    ProdutosData.shared.addProducts(nome: "Dipirona", quantidade: Int32(1), valorUni: Int32(4))
-                    ProdutosData.shared.saveContext()
-
+                    ProdutosData.shared.addProducts(nome: content.Remedio, quantidade: Int32(1), valorUni: Float(content.Preco) ?? 0.0)
                 }
+                ProdutosData.shared.saveContext()
+
                 
             
         }))

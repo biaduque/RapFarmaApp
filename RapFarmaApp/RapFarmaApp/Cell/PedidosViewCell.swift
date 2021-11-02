@@ -7,6 +7,10 @@
 
 import UIKit
 
+enum Status: Int{
+    case concluido,andamento,cancelado
+}
+
 class PedidosViewCell: UITableViewCell {
 
     @IBOutlet weak var imgFarm: UIImageView!
@@ -26,7 +30,21 @@ class PedidosViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func stylize(){
+    func stylize(pedido: Pedidos){
+        titleLabel.text = pedido.nome
+        if pedido.status == Int(0){
+            statusView.backgroundColor = .systemGreen
+            statusLabel.text = "Concluído"
+        }
+        else if pedido.status == Int(1){
+            statusView.backgroundColor = .systemYellow
+            statusLabel.text = "Em andamento"
+        }
+        else{
+            statusView.backgroundColor = .systemRed
+            statusLabel.text = "Cancelado"
+        }
+        imgFarm.image = UIImage(named: pedido.farma ?? "remedioDefault")
         statusView.layer.cornerRadius = 3
     }
 }

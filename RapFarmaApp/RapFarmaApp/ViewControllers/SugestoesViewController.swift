@@ -18,7 +18,7 @@ class SugestoesViewController: UIViewController, UICollectionViewDelegate, UICol
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return farmaciasData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -26,7 +26,7 @@ class SugestoesViewController: UIViewController, UICollectionViewDelegate, UICol
         
         if let cell: SugestoesCollectionViewCell  = collectionView.dequeueReusableCell(withReuseIdentifier: "sugestoesCell", for: indexPath as IndexPath) as? SugestoesCollectionViewCell {
             cell.backgroundColor = .systemBackground
-            cell.stylize()
+            cell.stylize(index: indexPath.row)
             cellBase = cell
         }
         return cellBase
@@ -35,6 +35,11 @@ class SugestoesViewController: UIViewController, UICollectionViewDelegate, UICol
         if let vc = storyboard?.instantiateViewController(identifier: "farmacia") as?
                     FarmaciaViewController {
             navigationController?.pushViewController(vc, animated: true)
+            vc.farmaciaSelected = farmaciasData[indexPath.row]
         }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! MoreInfoViewController
+        vc.info = 0
     }
 }
