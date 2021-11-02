@@ -32,6 +32,10 @@ class ContaViewController: UIViewController {
     @IBAction func saveAction(_ sender: Any) {
         alertSave()
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! MoreInfoViewController
+        vc.info = 3
+    }
 }
 
 extension ContaViewController: UITableViewDelegate{
@@ -52,3 +56,4 @@ extension ContaViewController: UITableViewDataSource{
         return 4
     }
 }
+

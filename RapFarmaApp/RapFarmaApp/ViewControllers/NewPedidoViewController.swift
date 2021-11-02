@@ -17,6 +17,7 @@ class NewPedidoViewController: UIViewController {
     @IBOutlet weak var subtotalLabel: UILabel?
     @IBOutlet weak var entregaLabel: UILabel?
     @IBOutlet weak var totalLabel: UILabel?
+    @IBOutlet weak var textField: UITextField!
     
     public var subtotal:Float!
     public var entrega: Float!
@@ -35,6 +36,7 @@ class NewPedidoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textField.delegate = self
     }
     @IBAction func cancelButton(_ sender: Any) {
                 ///alerta de cancelar
@@ -62,5 +64,14 @@ class NewPedidoViewController: UIViewController {
         delegate?.addOrder()
         delegateCarrinho?.addCarrinho()
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension NewPedidoViewController: UITextFieldDelegate{
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    ///essa funcao faz com que a tecla return do teclado faca o app aceitar a entrada e o teclado abaixe
+        textField.autocapitalizationType = .words
+        textField.resignFirstResponder()
+        return true
     }
 }

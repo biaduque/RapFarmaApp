@@ -6,11 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 
 
-
-class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var orderButton: UIButton!
     @IBOutlet weak var totalLabel: UILabel!
@@ -23,6 +23,24 @@ class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UIColl
 
     private var carrinho:[Produto] = []
     
+    
+    private lazy var fetchResultController: NSFetchedResultsController<Produto> = {
+        let request: NSFetchRequest<Produto> = Produto.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Produto.nome, ascending: true)]
+        let frc = NSFetchedResultsController(fetchRequest: request,
+                                             managedObjectContext: ProdutosData.shared.contenxt,
+                                             sectionNameKeyPath: nil,
+                                             cacheName: nil)
+        frc.delegate = self
+        return frc
+    }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionCarrinho.reloadData()
+        self.reloadTotal()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionCarrinho.delegate = self
@@ -30,15 +48,28 @@ class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UIColl
         carrinho = ProdutosData.shared.getProducts()
         reloadTotal()
         
-        if let vc = storyboard?.instantiateViewController(identifier: "carrinho") as?
+        
+        if let vc = storyboard?.instantiateViewController(identifier: "farmacia") as?
             FarmaciaViewController {
             vc.delegate = self
         }
         
-        if let vc = storyboard?.instantiateViewController(identifier: "newPedido") as?
+        if let vc2 = storyboard?.instantiateViewController(identifier: "newPedido") as?
             NewPedidoViewController {
-            vc.delegateCarrinho = self
+            vc2.delegateCarrinho = self
         }
+        
+        do {
+            try fetchResultController.performFetch()
+            self.carrinho = fetchResultController.fetchedObjects ?? []
+        } catch {
+            fatalError("erro")
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        guard let newCarrinho = controller.fetchedObjects as? [Produto] else { return }
+        self.carrinho = newCarrinho
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -62,10 +93,12 @@ class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UIColl
         return cellBase
     }
     func reloadTotal(){
+        totalCount = 0
         for i in 0..<carrinho.count{
             totalCount = Double(Float(carrinho[i].valorTotal)) + totalCount
         }
         totalLabel.text = (String(format:"R$ %.2f",totalCount))
+        
     }
     
     ///botao que realiza o pedido
@@ -78,6 +111,11 @@ class CarrinhoViewController: UIViewController, UICollectionViewDelegate, UIColl
             vc.farma = "remedioDefault"
             navigationController?.present(vc, animated: true)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! MoreInfoViewController
+        vc.info = 1
     }
     
 }

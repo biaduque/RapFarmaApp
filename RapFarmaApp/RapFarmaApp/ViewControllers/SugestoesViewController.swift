@@ -38,4 +38,8 @@ class SugestoesViewController: UIViewController, UICollectionViewDelegate, UICol
             vc.farmaciaSelected = farmaciasData[indexPath.row]
         }
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! MoreInfoViewController
+        vc.info = 0
+    }
 }
