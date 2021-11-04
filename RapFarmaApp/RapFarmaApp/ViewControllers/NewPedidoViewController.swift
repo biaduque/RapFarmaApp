@@ -53,17 +53,26 @@ class NewPedidoViewController: UIViewController {
     }
     
     @IBAction func newOrderButton(_ sender: Any) {
-        PedidosData.shared.addOrder(nome: "Pedido \(totalLabel?.text ?? "Novo Pedido")", status:Int32(1), farma: "remedioDefault")
         
-        var carrinho = ProdutosData.shared.getProducts()
-        while carrinho.count != 0{
-            try! ProdutosData.shared.deleta(item: carrinho.first!)
-            carrinho = ProdutosData.shared.getProducts()
-        }
-        
-        delegate?.addOrder()
-        delegateCarrinho?.addCarrinho()
-        self.dismiss(animated: true, completion: nil)
+        let ac = UIAlertController(title: "", message: "Tem certeza de que deseja confirmar o seu pedido?", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Sim", style: .default, handler: {
+                [self] action in
+                    ///opcoes de cancelamento
+                    PedidosData.shared.addOrder(nome: "Pedido \(totalLabel?.text ?? "Novo Pedido")", status:Int32(1), farma: "remedioDefault")
+                    
+                    var carrinho = ProdutosData.shared.getProducts()
+                    while carrinho.count != 0{
+                        try! ProdutosData.shared.deleta(item: carrinho.first!)
+                        carrinho = ProdutosData.shared.getProducts()
+                    }
+                    
+                    delegate?.addOrder()
+                    delegateCarrinho?.addCarrinho()
+                    self.dismiss(animated: true, completion: nil)
+
+            }))
+            ac.addAction(UIAlertAction(title: "Não", style: .cancel, handler: nil))
+            present(ac, animated: true)
     }
 }
 

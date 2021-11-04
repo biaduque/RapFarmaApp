@@ -56,15 +56,16 @@ class PedidosData{
     }
     
     func addOrder(nome: String, status: Int32,farma:String) {
+        let pedidos = getOrder()
+        if pedidos.count > 1 {
+            pedidos[pedidos.count-1].status = 0
+        }
+        
         let pedido = Pedidos(context: self.persistentContainer.viewContext)
         pedido.nome = nome
         pedido.status = status
         pedido.farma = farma
         
-        let pedidos = getOrder()
-        if pedidos.count > 1 {
-            pedidos[pedidos.count-1].status = 0
-        }
         self.saveContext()
     }
     func deleta(item: Pedidos) throws{
