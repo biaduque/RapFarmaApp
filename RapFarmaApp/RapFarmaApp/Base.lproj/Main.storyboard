@@ -53,6 +53,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" name="Background"/>
                                             <constraints>
                                                 <constraint firstItem="E6o-vi-Je9" firstAttribute="top" secondItem="kcD-tc-lcW" secondAttribute="bottom" constant="8" symbolic="YES" id="F4b-hj-hO1"/>
                                                 <constraint firstItem="kcD-tc-lcW" firstAttribute="top" secondItem="SaY-al-bYy" secondAttribute="top" constant="-9" id="GdR-YL-ioT"/>
@@ -62,6 +63,7 @@
                                                 <constraint firstItem="kcD-tc-lcW" firstAttribute="leading" secondItem="SaY-al-bYy" secondAttribute="leading" constant="19" id="osf-lW-NbS"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" name="Background"/>
                                         <size key="customSize" width="170" height="140"/>
                                         <connections>
                                             <outlet property="imgFarma" destination="kcD-tc-lcW" id="w8P-0v-Bpv"/>
@@ -152,7 +154,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Background"/>
                                 <constraints>
                                     <constraint firstItem="RKc-tW-e7p" firstAttribute="leading" secondItem="74V-V7-onP" secondAttribute="trailing" id="3nd-1h-1KR"/>
                                     <constraint firstItem="wFM-bv-0CH" firstAttribute="leading" secondItem="9pn-o4-MQo" secondAttribute="leading" constant="97" id="4Um-XS-nyI"/>
@@ -190,7 +192,7 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Tw5-qa-75b">
                                 <rect key="frame" x="20" y="193" width="374" height="568"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="Background"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="8NT-D3-hD2"/>
                                     <constraint firstAttribute="height" constant="568" id="ohe-Ck-ddW"/>
@@ -245,6 +247,7 @@
                                                 <constraint firstItem="mCE-ea-nyx" firstAttribute="bottom" secondItem="w3y-tD-eHm" secondAttribute="bottomMargin" id="tvq-I6-VzE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Background"/>
                                         <connections>
                                             <outlet property="addProdutct" destination="0ng-io-VaH" id="kWB-OF-tfg"/>
                                             <outlet property="imgProduto" destination="zTS-XW-Xyr" id="wF0-Ci-q0B"/>
@@ -268,7 +271,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="W6t-5B-ZXX"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="4Kp-iI-u75" firstAttribute="bottom" secondItem="W6t-5B-ZXX" secondAttribute="bottom" constant="-28" id="5jS-1R-tt4"/>
                             <constraint firstItem="W6t-5B-ZXX" firstAttribute="trailing" secondItem="Tw5-qa-75b" secondAttribute="trailing" constant="20" id="5rs-kU-Mm4"/>
@@ -406,6 +409,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Exemplo: Rua Antônio Alves de Souza, 22, Bonfim" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="949-k5-zST">
                                 <rect key="frame" x="65" y="349" width="328" height="34"/>
+                                <color key="backgroundColor" name="Background"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -460,7 +464,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kWG-NR-0hn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="3PB-Dc-iYd" firstAttribute="top" secondItem="gZl-3l-Cwc" secondAttribute="bottom" constant="7" id="0uM-Q5-ufb"/>
                             <constraint firstItem="yI8-jQ-BgP" firstAttribute="top" secondItem="949-k5-zST" secondAttribute="bottom" constant="8" symbolic="YES" id="1ki-qq-qFs"/>
@@ -548,9 +552,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ojj-Si-lch">
-                                <rect key="frame" x="87" y="434" width="240" height="20.5"/>
+                                <rect key="frame" x="47" y="434" width="319" height="20.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="V9j-OL-kZp"/>
+                                    <constraint firstAttribute="width" constant="319" id="V9j-OL-kZp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -566,15 +570,15 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tdD-4g-6Yc"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="Background"/>
                         <constraints>
                             <constraint firstItem="tdD-4g-6Yc" firstAttribute="trailing" secondItem="Aou-R7-3Wl" secondAttribute="trailing" constant="20" id="0lQ-zt-Wgr"/>
                             <constraint firstItem="b2u-aH-XzY" firstAttribute="leading" secondItem="tdD-4g-6Yc" secondAttribute="leading" constant="87" id="2fR-s7-ZOT"/>
-                            <constraint firstItem="ojj-Si-lch" firstAttribute="leading" secondItem="tdD-4g-6Yc" secondAttribute="leading" constant="87" id="Emm-12-cOw"/>
+                            <constraint firstItem="ojj-Si-lch" firstAttribute="leading" secondItem="tdD-4g-6Yc" secondAttribute="leading" constant="47" id="Emm-12-cOw"/>
                             <constraint firstItem="b2u-aH-XzY" firstAttribute="top" secondItem="tdD-4g-6Yc" secondAttribute="top" constant="271" id="Vav-Dj-dlR"/>
                             <constraint firstItem="Aou-R7-3Wl" firstAttribute="top" secondItem="tdD-4g-6Yc" secondAttribute="top" constant="20" id="WVb-fW-7j0"/>
                             <constraint firstItem="ojj-Si-lch" firstAttribute="top" secondItem="b2u-aH-XzY" secondAttribute="bottom" constant="36.5" id="XDJ-TX-YY7"/>
-                            <constraint firstItem="tdD-4g-6Yc" firstAttribute="trailing" secondItem="ojj-Si-lch" secondAttribute="trailing" constant="87" id="gzC-Sj-Bnp"/>
+                            <constraint firstItem="tdD-4g-6Yc" firstAttribute="trailing" secondItem="ojj-Si-lch" secondAttribute="trailing" constant="48" id="gzC-Sj-Bnp"/>
                             <constraint firstItem="tdD-4g-6Yc" firstAttribute="trailing" secondItem="b2u-aH-XzY" secondAttribute="trailing" constant="87" id="sUB-mh-Rg0"/>
                         </constraints>
                     </view>
@@ -671,6 +675,7 @@
                                                 <constraint firstItem="SuH-7l-KJe" firstAttribute="bottom" secondItem="6BV-GX-K4l" secondAttribute="bottomMargin" id="yYM-5D-OqD"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Background"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="kA8-vH-nn2" id="cd2-j9-JN0"/>
                                             <outlet property="imgFarm" destination="d9C-fB-LcU" id="7PL-2K-W8t"/>
@@ -746,6 +751,7 @@
                                                 <constraint firstItem="vYy-B1-LJm" firstAttribute="leading" secondItem="GXd-ge-4Be" secondAttribute="leading" constant="20" id="zMB-kp-wcG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" name="Background"/>
                                         <connections>
                                             <outlet property="textField" destination="vYy-B1-LJm" id="IeG-a2-X4z"/>
                                         </connections>
@@ -876,6 +882,7 @@
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" name="Background"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="VZb-tG-Y0q" secondAttribute="trailing" constant="49" id="4LK-db-jmz"/>
                                                 <constraint firstAttribute="trailing" secondItem="EyB-oU-aug" secondAttribute="trailing" constant="8" id="6TB-oi-t3J"/>
@@ -1091,9 +1098,6 @@
         </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
